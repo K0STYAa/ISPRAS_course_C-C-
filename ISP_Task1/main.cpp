@@ -9,7 +9,7 @@ namespace constants {
 ///---------------------------------------------------------------------------------------------------------------------
 /*!
 is double number zero
-@param[in] a our double number
+ @param[in] a our double number
  @return true if number is zero
 */
 bool IsNull(double a) {
