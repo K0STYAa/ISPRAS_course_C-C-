@@ -4,12 +4,13 @@
 
 namespace constants {
     double EPS = 0.0001;
+    int precision = 6;
 }
 
 ///---------------------------------------------------------------------------------------------------------------------
 /*!
 is double number zero
-@param[in] a our double number
+ @param[in] a our double number
  @return true if number is zero
 */
 bool IsNull(double a) {
@@ -24,7 +25,7 @@ struct Params {
         std::cin >> this->a >> this->b >> this->c;
     }
 
-    /*! Solves a square equation ax^2 + bx + c = 0
+    /*! Solves a quadratic equation ax^2 + bx + c = 0
      @param [in] a_ coefficient
      @param [in] b_ coefficient
      @param [in] c_ coefficient
@@ -35,7 +36,7 @@ struct Params {
         c = c_;
     }
 
-    /*! Solves a square equation ax^2 + bx + c = 0
+    /*! Solves a quadratic equation ax^2 + bx + c = 0
      @param [out] root1 Reference to first root
      @param [out] root2 Reference to second root
      @return Number of roots
@@ -44,7 +45,7 @@ struct Params {
 
     int Solve(double &root1, double &root2) {
         if (!IsNull(a)) {
-            ///square equation
+            ///quadratic equation
             double d = b * b - 4 * a * c;
             if (IsNull(d)) {
                 root1 = -b / (2 * a);
@@ -130,10 +131,12 @@ int main() {
         case 0:     std::cout << "No roots" << std::endl;
                     break;
 
-        case 1:     std::cout << "x = " << root1 << std::endl;
+        case 1:     std::cout << std::fixed << std::setprecision(constants::precision)
+                    << "x = " << root1 << std::endl;
                     break;
 
-        case 2:     std::cout << "x1 = " << root1 << ", x2 = " << root2 << std::endl;
+        case 2:     std::cout << std::fixed << std::setprecision(constants::precision)
+                    << "x1 = " << root1 << ", x2 = " << root2 << std::endl;
                     break;
 
         default:    std::cout << "main(): ERROR: nRoots = " << nRoots << std::endl;
