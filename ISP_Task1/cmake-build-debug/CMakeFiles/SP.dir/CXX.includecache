@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kostya/ProgramFiles/DRIO_7.1.0-1/SP/main.cpp
+iostream
+-
+cmath
+-
+assert.h
+-
+
