@@ -76,7 +76,7 @@ private:
 };
 
 ///---------------------------------------------------------------------------------------------------------------------
-/*! Tests the function for solving a quadratic equation */
+/*! Tests the function for solving a square equation */
 void test() {
 
     double root1, root2;
