@@ -1,12 +1,5 @@
 \hypertarget{structParams}{}\section{Params Struct Reference}
 \label{structParams}\index{Params@{Params}}
-
-
-
-
-  
-
-
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,19 +9,14 @@ int \hyperlink{structParams_af5f7a3bd9ab411b3ce6745ab9114835e}{Solve} (double \&
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-
-
- 
-
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structParams_a6305a9d5692dd0cd1d495569284a8a9e}\label{structParams_a6305a9d5692dd0cd1d495569284a8a9e}} 
 \index{Params@{Params}!Params@{Params}}
 \index{Params@{Params}!Params@{Params}}
 \subsubsection{\texorpdfstring{Params()}{Params()}}
-{\footnotesize\ttfamily Params\+::\+Params (\begin{DoxyParamCaption}\item[{double}]{a\+\_\+,  }\item[{double}]{b\+\_\+,  }\item[{double}]{c\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Params\+::\+Params (\begin{DoxyParamCaption}\item[{double}]{a\+\_\+,  }\item[{double}]{b\+\_\+,  }\item[{double}]{c\+\_\+ }\end{DoxyParamCaption})}
 
-Solves a square equation ax$^\wedge$2 + bx + c = 0 
+Enter coefficients of quadratic equation ax$^\wedge$2 + bx + c = 0 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em a\+\_\+} & coefficient \\
 \hline
@@ -44,9 +32,9 @@ Solves a square equation ax$^\wedge$2 + bx + c = 0
 \index{Params@{Params}!Solve@{Solve}}
 \index{Solve@{Solve}!Params@{Params}}
 \subsubsection{\texorpdfstring{Solve()}{Solve()}}
-{\footnotesize\ttfamily int Params\+::\+Solve (\begin{DoxyParamCaption}\item[{double \&}]{root1,  }\item[{double \&}]{root2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Params\+::\+Solve (\begin{DoxyParamCaption}\item[{double \&}]{root1,  }\item[{double \&}]{root2 }\end{DoxyParamCaption})}
 
-Solves a square equation ax$^\wedge$2 + bx + c = 0 
+Solves a quadratic equation ax$^\wedge$2 + bx + c = 0 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt out}  & {\em root1} & Reference to first root \\
 \hline
@@ -59,7 +47,7 @@ Number of roots
 \begin{DoxyNote}{Note}
 In case of infinite number of roots, returns -\/1 
 \end{DoxyNote}
-square equation
+quadratic equation
 
 linear equation
 
@@ -67,6 +55,7 @@ no roots
 
 c = 0 ; x = any number 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-main.\+cpp\end{DoxyCompactItemize}
+Files\+Eq/Quad.\+h\item 
+Files\+Eq/Quad.\+cpp\end{DoxyCompactItemize}
