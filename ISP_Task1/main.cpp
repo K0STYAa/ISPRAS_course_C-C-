@@ -14,8 +14,9 @@ is double number zero
  @param[in] a our double number
  @return true if number is zero
 */
-bool IsNull(double a) {
-    return a < constants::EPS && a > -constants::EPS;
+bool IsZero(double value) {
+    assert(std::isfinite(value));
+    return fabs(value) < constants::EPS;
 }
 ///---------------------------------------------------------------------------------------------------------------------
 
@@ -45,10 +46,10 @@ struct Params {
     */
 
     int Solve(double &root1, double &root2) {
-        if (!IsNull(a)) {
+        if (!IsZero(a)) {
             ///quadratic equation
             double d = b * b - 4 * a * c;
-            if (IsNull(d)) {
+            if (IsZero(d)) {
                 root1 = -b / (2 * a);
                 return 1;
             }
@@ -59,12 +60,12 @@ struct Params {
             root2 = (-b + sqrt(d)) / (2 * a);
             return 2;
         }
-        if (!IsNull(b)) {
+        if (!IsZero(b)) {
             ///linear equation
             root1 = -c / b;
             return 1;
         }
-        if (!IsNull(c)) {
+        if (!IsZero(c)) {
             ///no roots
             return 0;
         }
@@ -96,14 +97,14 @@ void test() {
     { /// x^2 - 2 = 0 ; root1 = -sqrt(2), root2 = sqrt(2)
         Params test_param(1, 0, -2);
         assert(test_param.Solve(root1, root2) == 2);
-        assert(IsNull(root1 + sqrt(2.0)));
-        assert(IsNull(root2 - sqrt(2.0)));
+        assert(IsZero(root1 + sqrt(2.0)));
+        assert(IsZero(root2 - sqrt(2.0)));
     }
 
     { /// 3x + 4 = 0 ; root = -1.3333
         Params test_param(0, 3, 4);
         assert(test_param.Solve(root1, root2) == 1);
-        assert(IsNull( root1 + 4.0 / 3 ));
+        assert(IsZero( root1 + 4.0 / 3 ));
     }
 
     { /// 7 = 0 ; no roots
