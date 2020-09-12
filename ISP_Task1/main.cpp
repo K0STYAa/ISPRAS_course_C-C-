@@ -27,7 +27,7 @@ struct Params {
         std::cin >> this->a >> this->b >> this->c;
     }
 
-    /*! Solves a quadratic equation ax^2 + bx + c = 0
+    /*! Enter coefficients of quadratic equation ax^2 + bx + c = 0
      @param [in] a_ coefficient
      @param [in] b_ coefficient
      @param [in] c_ coefficient
