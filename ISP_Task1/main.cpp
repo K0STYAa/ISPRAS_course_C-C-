@@ -32,6 +32,7 @@ struct Params {
      @param [in] b_ coefficient
      @param [in] c_ coefficient
     */
+
     Params(double a_, double b_, double c_) {
         a = a_;
         b = b_;
@@ -53,7 +54,7 @@ struct Params {
                 root1 = -b / (2 * a);
                 return 1;
             }
-            if (d < -constants::EPS) {
+            if (d <= -constants::EPS) {
                 return 0;
             }
             root1 = (-b - sqrt(d)) / (2 * a);
@@ -104,7 +105,7 @@ void test() {
     { /// 3x + 4 = 0 ; root = -1.3333
         Params test_param(0, 3, 4);
         assert(test_param.Solve(root1, root2) == 1);
-        assert(IsZero( root1 + 4.0 / 3 ));
+        assert(IsZero(root1 + 4.0 / 3));
     }
 
     { /// 7 = 0 ; no roots
@@ -122,7 +123,7 @@ void test() {
 
 int main() {
     test();
-    double root1, root2;
+    double root1 = NAN, root2 = NAN;
     Params param;
     int nRoots = param.Solve(root1, root2);
     switch (nRoots) {
