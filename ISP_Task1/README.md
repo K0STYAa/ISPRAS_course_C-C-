@@ -8,7 +8,7 @@ Task of the project is to solve a quadratic equation ax^2 + bx + c = 0 and test 
 ## The following commands you can do with project
 
 ```
- make                         - build executed file QuadraticEquationSolver
+ make                         - build executable file QuadraticEquationSolver
  make clean                   - delete .o files in FilesEq/
  make clean_exe               - delete QuadraticEquationSolver
  ./QuadraticEquationSolver    - run our program
