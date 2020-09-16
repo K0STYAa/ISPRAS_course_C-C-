@@ -4,6 +4,7 @@
 #include <cmath>
 #include <iomanip>
 #include <assert.h>
+#include <limits.h>
 
 
 /*! Is double number zero
@@ -11,6 +12,13 @@
  @return true if number is zero
 */
 bool IsZero(double value);
+
+
+/*! Taking module
+ @param[in] a our double number
+ @return the module of value if his absolute value smalle then EPS
+*/
+void AbsZero(double &value);
 
 
 struct Params {

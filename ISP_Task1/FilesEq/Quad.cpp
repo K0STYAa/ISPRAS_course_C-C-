@@ -13,10 +13,20 @@ bool IsZero(double value) {
     return fabs(value) < constants::EPS;
 }
 
+void AbsZero(double &value) {
+   value = fabs(value) < constants::EPS ? fabs(value) : value;
+}
+
 
 Params::Params() {
     std::cout << "Enter the coefficients a, b, c of the quadratic equation" << std::endl;
     std::cin >> this->a >> this->b >> this->c;
+    if (std::cin.fail() || (a < INT_MIN || a > INT_MAX) ||
+                           (b < INT_MIN || b > INT_MAX) || 
+                           (c < INT_MIN || c > INT_MAX)) {
+        std::cout << "Invalid input.\nExit.\n";
+        exit(1);
+    }
 }
 
 
@@ -33,6 +43,7 @@ int Params::Solve(double &root1, double &root2) {
         double d = b * b - 4 * a * c;
         if (IsZero(d)) {
             root1 = -b / (2 * a);
+            AbsZero(root1);
             return 1;
         }
         if (d <= -constants::EPS) {
@@ -40,11 +51,14 @@ int Params::Solve(double &root1, double &root2) {
         }
         root1 = (-b - sqrt(d)) / (2 * a);
         root2 = (-b + sqrt(d)) / (2 * a);
+        AbsZero(root1);
+        AbsZero(root2);
         return 2;
     }
     if (!IsZero(b)) {
         ///linear equation
         root1 = -c / b;
+        AbsZero(root1);
         return 1;
     }
     if (!IsZero(c)) {
