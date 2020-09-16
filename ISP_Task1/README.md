@@ -5,7 +5,7 @@ Project - solving a quadratic equation
 ## Task
 Task of the project is to solve a quadratic equation ax^2 + bx + c = 0 and test it
 
-##The following commands you can do with project
+## The following commands you can do with project
 
 ```
  make                         - build executed file QuadraticEquationSolver
